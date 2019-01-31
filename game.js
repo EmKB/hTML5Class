@@ -17,21 +17,23 @@ Game();
 
 function Game(){
 	
-	document.write("legend Of Cactus Dragon!");
+	document.write("Pandemic Survival!");
 	var playerName = prompt("What is your name?");
-	alert("Welcome to driz"+ playerName);
+	alert("Welcome to Pandemic survival " + playerName);
 	
 	Prison();
 	
 	function Prison(){
-		var prison = prompt("You wake up...Your head is pounding and your vision blurred. After pacing around walking off the headache your vision clears. It appears you are in prison and you cannot remember why. /n -look around /n - go back to sleep /n - taunt the guard").tolowerCase();
+		var prison = prompt("There has been a pandemic they had kept the disease in a town that was fenced, you were a guard of the diseased you didn't know how they had plotted a plan to escape. One day when you were giving the sick food and then they grabbed you and drug you somewhere. You just barley woke up. You have no clue where everyone is. You no longer have your safteysuit from the disease on. You look around adn see a purple,green,balck,mark on your arm, it is the rash of the disease. /n-look around /n-go back to sleep /n-freak out /n-go to the grass").toLowerCase();
+    
+        
 		
 		if(prison == "look around" || prison == "look"){
-			var prison = prompt ("the prison is small, dirty and damp. A rat scurries into a hole in the corner. Bugs squirm and scamper underfoot. There is a barred window to the back. An occupied bed a stranger asleep snoring to the right. the cell bars and locked door to the front. An empty bed which yu had sleeped inthe night before to the right. In the center of the dirt floor is a lumpy moldy rug. /n-wake stranger /n -move rug /n -eat bugs");
+			var prison = prompt (" You sit up from you cot. The door to the room is open. You see vibrant green grass with a lake in the distance. /n-go to the grass /n -go to the lake /n -stay in the room a look around the room more").toLowerCase();
 		}
 			
-		else if(prison == "go back to sleep" || prison == "sleep"){
-			alert("you fall back to sleep in your dirty cot. YOu dream of a distant lands and adventures");
+		else if(prison == "go to the grass" || prison == "grass"){
+			alert("You are now outside. You see flowers decerating the edge of the house. To your left you see a giant garden").toLowerCase();
 			var resume = confirm("Do you wish to continue");
 			
 			if(resume){
