@@ -43,6 +43,35 @@ function Game(){
 				alert("Game Over!")
 			}
 		}
+        else{
+            alert("I don't know what "+prison+" is!");
+            Prison();
+        }
 	}
-	
+    function Lake(){
+        var lakeEnv = prompt("This is a dank swamp. \n-follow path \n-swim");
+        
+        
+        if(lakeEnv == "Follow" || lakeEnv == "follow path"){
+            var lakePath = prompt("You enter on the swamp path and head north in the distance you see a swamp hut. As you approach you see a light burning inside. \n-enter hut \n-burn down hut");
+            if( lakePath = "enter"){
+                alert("You entered the hut. there is an old bag bend over a black cauldron on the fire in hte hearth." );
+            }
+            else if(lakePath = "burn down hut"){
+                alert("you burn down the hut... hope you feel good about yourself.. Pyro!")
+            }
+            else{
+                alert("don't throw rockes at hut ... please!");
+            }
+        }
+       
+       else if(swampEnv == "Swim"){
+            
+        }
+        else{
+            alert("I don't understand "+swampEnv);
+            Swamp();
+        }
+    }
 }
+
