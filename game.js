@@ -11,8 +11,17 @@ Multiline comment
 // confirm("Do you like pokemon?");
 // prompt("What type of pokemon do you like");
 
-
-
+//javascript invintory object for an invintory
+var inventory = {
+    coins:1000,
+    strawberries:0,
+    sword:0,
+    map:0
+}
+var enemy ={
+    coins:100,
+    health:80
+}
 Game();
 
 function Game(){
@@ -33,7 +42,33 @@ function Game(){
 		}
 			
 		else if(prison == "go to the grass" || prison == "grass"){
-			alert("You are now outside. You see flowers decerating the edge of the house. To your left you see a giant garden").toLowerCase();
+			alert("You are now outside. You see flowers decerating the edge of the house. To your left you see a giant garden");
+            
+        store();
+            
+        function store(){
+            alert("the Gardener sees you");
+            
+                var store = prompt("What would youlike to buy? \n-carrots \n-peas \n-strawberries \n-leave store");
+                    if(store == "strawberries" || store == "berries" && inventory.coins >= 100){
+                        var strawberriesBuy = confirm("Are you sure you want to buy stawberries");
+                            if(strawberryBuy){
+                                //Adds sword plus one
+                                inventory.strawberries ++;
+                                // displays strawberries owned
+                                alert("You own " +inventory.stawberries+"stawberries")
+                                //takes money out of account for strawberries
+                                inventory.coins = inventory.coins -100;
+                                //displays coins left in account
+                                alert("You have "+inventory.coins+"coins remaining");
+                                store();
+                            }
+                        else{
+                            alert("have a good day, come back again!");
+                            Village();
+                        }
+                    }
+        }
 			var resume = confirm("Do you wish to continue");
 			
 			if(resume){
@@ -65,12 +100,12 @@ function Game(){
             }
         }
        
-       else if(swampEnv == "Swim"){
+       else if(lakeEnv == "Swim"){
             
         }
         else{
-            alert("I don't understand "+swampEnv);
-            Swamp();
+            alert("I don't understand "+lakeEnv);
+            Lake();
         }
     }
 }
