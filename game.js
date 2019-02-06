@@ -38,7 +38,7 @@ function Game(){
         
 		
 		if(prison == "look around" || prison == "look"){
-			var prison = prompt (" You sit up from you cot. The door to the room is open. You see vibrant green grass with a lake in the distance. /n-go to the grass /n -go to the lake /n -stay in the room a look around the room more").toLowerCase();
+			 var exitprison = prompt(" You sit up from you cot. The door to the room is open. You see vibrant green grass with a lake in the distance.  /n -go to the lake /n -stay in the room a look around the room more").toLowerCase;
 		}
 			
 		else if(prison == "go to the grass" || prison == "grass"){
@@ -52,16 +52,16 @@ function Game(){
                 var store = prompt("What would youlike to buy? \n-carrots \n-peas \n-strawberries \n-leave store");
                     if(store == "strawberries" || store == "berries" && inventory.coins >= 100){
                         var strawberriesBuy = confirm("Are you sure you want to buy stawberries");
-                            if(strawberryBuy){
+                            if(strawberriesBuy){
                                 //Adds sword plus one
                                 inventory.strawberries ++;
                                 // displays strawberries owned
-                                alert("You own " +inventory.stawberries+"stawberries")
+                                alert("You own "+inventory.strawberries+" strawberry")
                                 //takes money out of account for strawberries
-                                inventory.coins = inventory.coins -100;
+                                inventory.coins = inventory.coins -5;
                                 //displays coins left in account
-                                alert("You have "+inventory.coins+"coins remaining");
-                                store();
+                                alert("You have "+inventory.coins+" coins remaining");
+                                
                             }
                         else{
                             alert("have a good day, come back again!");
@@ -83,22 +83,24 @@ function Game(){
             Prison();
         }
 	}
+    Lake();
     function Lake(){
-        var lakeEnv = prompt("This is a dank swamp. \n-follow path \n-swim");
+        var lake = prompt("This is a huge lake.  \n- go swiming");
         
         
-        if(lakeEnv == "Follow" || lakeEnv == "follow path"){
-            var lakePath = prompt("You enter on the swamp path and head north in the distance you see a swamp hut. As you approach you see a light burning inside. \n-enter hut \n-burn down hut");
-            if( lakePath = "enter"){
+        if(lake == "go swiming" || lake == "swim"){
+            var lake = prompt("You enter on the swamp path and head north in the distance you see a swamp hut. As you approach you see a light burning inside. \n- enter hut \n- burn down hut");
+            if(lake == "enter hut" || lake == "enter"){
                 alert("You entered the hut. there is an old bag bend over a black cauldron on the fire in hte hearth." );
             }
-            else if(lakePath = "burn down hut"){
-                alert("you burn down the hut... hope you feel good about yourself.. Pyro!")
+            else if( lake = "burn down hut" || lake == "burn"){
+                alert("you burn down the hut... hope you feel good about yourself.. Pyro!");
             }
             else{
                 alert("don't throw rockes at hut ... please!");
             }
         }
+    
        
        else if(lakeEnv == "Swim"){
             
@@ -106,6 +108,34 @@ function Game(){
         else{
             alert("I don't understand "+lakeEnv);
             Lake();
+            
+  function Castle(){
+      var insideCastle = prompt(" - upstairs - downstairs - courtyard - balcony - look").tolowerCase();
+       
+     switch(insideCastle){
+         case "upstairs" || "go upstairs":
+             var upstairs = prompt("You walk a long flight of stairs to the top floor of the castle.");
+             
+             Castle();
+        break;
+        case "downstairs":
+            alert("You go down stairs");
+             
+        break;
+        case "courtyard":
+            alert("you go to the courtyard");
+            Castle();
+        break;
+        case "balcony":
+            alert("you go to the balcony");
+            Castle();
+        break;
+        default:
+            alert("I don't know waht "+insideCastle+" is!");
+            Castle();
+        break;
+     }
+  }
         }
     }
 }
