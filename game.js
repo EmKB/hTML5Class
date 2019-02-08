@@ -21,11 +21,17 @@ var inventory = {
 var enemy ={
     coins:100,
     health:80
+
 }
+
+
+
 
 Game();
 
 function Game(){
+    var wizardNames = ["Bathazar", "Mordac", "Grendor","Oroco"];
+    alert("lengend of"+wizardNames[Math.floor(Math.random()* 4)]+"!");
 	
 	document.write("Pandemic Survival!");
 	var playerName = prompt("What is your name?");
@@ -35,7 +41,7 @@ function Game(){
 }
 	
 function Prison(){
-		var prison = prompt("There has been a pandemic they had kept the disease in a town that was fenced, you were a guard of the diseased you didn't know how they had plotted a plan to escape. One day when you were giving the sick food and then they grabbed you and drug you somewhere. You just barley woke up. You have no clue where everyone is. You no longer have your safteysuit from the disease on. You look around adn see a purple,green,balck,mark on your arm, it is the rash of the disease. /n-look around /n-go back to sleep /n-freak out /n-go to the grass").toLowerCase();
+		var prison = prompt("There has been a pandemic they had kept the disease in a town that was fenced, you were a guard of the diseased you didn't know how they had plotted a plan to escape. One day when you were giving the sick food and then they grabbed you and drug you somewhere. You just barley woke up. You have no clue where everyone is. You no longer have your safteysuit from the disease on. You look around adn see a purple,green,balck,mark on your arm, it is the rash of the disease. /n-look around /n-go to the grass").toLowerCase();
     
     
 		
@@ -54,12 +60,18 @@ function Prison(){
             
             }
             else{
-                alert("game over")
+                alert("game over");
             }
             
-        store();
         }
-       
+        
+        else if(prison == "castle"){
+            Castle();
+        }
+        else{
+            alert("I don't konw what "+prison+" is");
+            Prison();
+        }
                   
 }
             
@@ -103,10 +115,10 @@ function store(){
 }
     Lake();
     function Lake(){
-        var lake = prompt("This is a huge lake.  \n- go swiming");
+        var lakeEnv = prompt("This is a huge lake.  \n- go swiming");
         
         
-        if(lake == "go swiming" || lake == "swim"){
+        if(lakeEnv == "go swiming" || lakeEnv == "swim"){
             var lake = prompt("You enter on the swamp path and head north in the distance you see a swamp hut. As you approach you see a light burning inside. \n- enter hut \n- burn down hut");
             if(lake == "enter hut" || lake == "enter"){
                 alert("You entered the hut. there is an old bag bend over a black cauldron on the fire in hte hearth." );
@@ -131,8 +143,7 @@ function store(){
  }
   Castle();
   function Castle(){
-      var gotocastle = prompt("it is huge. /n- look around /n- go inside");
-      var insideCastle = prompt(" - upstairs - downstairs - courtyard - balcony - look").toLowerCase();
+      var insideCastle = prompt(" - upstairs -downstairs -courtyard -balcony -look").toLowerCase();
        
     
      switch(insideCastle){
