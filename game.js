@@ -22,6 +22,7 @@ var enemy ={
     coins:100,
     health:80
 }
+
 Game();
 
 function Game(){
@@ -31,24 +32,38 @@ function Game(){
 	alert("Welcome to Pandemic survival " + playerName);
 	
 	Prison();
+}
 	
-	function Prison(){
+function Prison(){
 		var prison = prompt("There has been a pandemic they had kept the disease in a town that was fenced, you were a guard of the diseased you didn't know how they had plotted a plan to escape. One day when you were giving the sick food and then they grabbed you and drug you somewhere. You just barley woke up. You have no clue where everyone is. You no longer have your safteysuit from the disease on. You look around adn see a purple,green,balck,mark on your arm, it is the rash of the disease. /n-look around /n-go back to sleep /n-freak out /n-go to the grass").toLowerCase();
     
     
 		
 		if(prison == "look around" || prison == "look"){
-			 var exitprison = prompt(" You sit up from you cot. The door to the room is open. You see vibrant green grass with a lake in the distance.  /n -go to the lake /n -stay in the room a look around the room more").toLowerCase;
-            Lake();
+			 var exitprison = prompt(" You sit up from you cot. The door to the room is open. You see vibrant green grass with a lake in the distance.  /n -go to the lake /n -stay in the room a look around the room more"); 
+                  
         }
 		
 			
 		else if(prison == "go to the grass" || prison == "grass"){
 			alert("You are now outside. You see flowers decerating the edge of the house. To your left you see a giant garden");
             
-        store();
+            var resume = confirm("do you wish to continue");
+            if(resume){
+                Prison();
             
-        function store(){
+            }
+            else{
+                alert("game over")
+            }
+            
+        store();
+        }
+       
+                  
+}
+            
+function store(){
             alert("the Gardener sees you");
             
                 var store = prompt("What would youlike to buy? \n-carrots \n-peas \n-strawberries \n-leave store");
@@ -70,21 +85,21 @@ function Game(){
                             Village();
                         }
                     }
-        }
+        
 			var resume = confirm("Do you wish to continue");
 			
 			if(resume){
 				Prison();
 			}
-			else{
-				alert("Game Over!")
+			else if(resume == false){
+				alert("Game Over!");
 			}
-		}
-        else{
-            alert("I don't know what "+prison+" is!");
-            Prison();
-        }
-	}
+		
+            else{ 
+                alert("I don't know what "+ prison+" is!");
+                Prison();
+            }
+	
 }
     Lake();
     function Lake(){
@@ -112,11 +127,14 @@ function Game(){
         else{
             alert("I don't understand "+lakeEnv);
             Lake();
+        }
+ }
   Castle();
   function Castle(){
-      var gotocastle = prompt("it is huge. /n- look around /n- go inside")
-      var insideCastle = prompt(" - upstairs - downstairs - courtyard - balcony - look").tolowerCase();
+      var gotocastle = prompt("it is huge. /n- look around /n- go inside");
+      var insideCastle = prompt(" - upstairs - downstairs - courtyard - balcony - look").toLowerCase();
        
+    
      switch(insideCastle){
          case "upstairs" || "go upstairs":
              var upstairs = prompt("You walk a long flight of stairs to the top floor of the castle.");
@@ -141,7 +159,7 @@ function Game(){
         break;
      }
   
-        }
-    }
 }
+
+
 
