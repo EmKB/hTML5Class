@@ -38,7 +38,7 @@ function Game(){
 	alert("Welcome to Pandemic survival " + playerName);
 	
 	Prison();
-}
+
 	
 function Prison(){
 		var prison = prompt("There has been a pandemic they had kept the disease in a town that was fenced, you were a guard of the diseased you didn't know how they had plotted a plan to escape. One day when you were giving the sick food and then they grabbed you and drug you somewhere. You just barley woke up. You have no clue where everyone is. You no longer have your safteysuit from the disease on. You look around adn see a purple,green,balck,mark on your arm, it is the rash of the disease. /n-look around /n-go to the grass").toLowerCase();
@@ -60,7 +60,7 @@ function Prison(){
             
             }
             else{
-                alert("game over");
+                   alert("game over");
             }
             
         }
@@ -74,9 +74,38 @@ function Prison(){
         }
                   
 }
+
+ Lake()
+ function Lake(){
+        var lakeEnv = prompt("This is a huge lake.  \n- go swiming");
+        
+        
+        if(lakeEnv == "go swiming" || lakeEnv == "swim"){
+            var lake = prompt("You enter on the swamp path and head north in the distance you see a swamp hut. As you approach you see a light burning inside. \n- enter hut \n- burn down hut");
+            if(lake == "enter hut" || lake == "enter"){
+                alert("You entered the hut. there is an old bag bend over a black cauldron on the fire in hte hearth." );
+            }
+            else if( lake = "burn down hut" || lake == "burn"){
+                alert("you burn down the hut... hope you feel good about yourself.. Pyro!");
+            }
             
+            else{
+                alert("don't throw rockes at hut ... please!");
+            }
+        }
+        else if(lakeEnv == "Swim"){
+            
+        }
+        else{
+            alert("I don't understand "+lakeEnv);
+            Lake();
+        }
+      
+        }
+ }
+store()
 function store(){
-            alert("the Gardener sees you");
+            alert("There is a vending machine is half way full");
             
                 var store = prompt("What would youlike to buy? \n-carrots \n-peas \n-strawberries \n-leave store");
                     if(store == "strawberries" || store == "berries" && inventory.coins >= 100){
@@ -113,34 +142,7 @@ function store(){
             }
 	
 }
-    Lake();
-    function Lake(){
-        var lakeEnv = prompt("This is a huge lake.  \n- go swiming");
-        
-        
-        if(lakeEnv == "go swiming" || lakeEnv == "swim"){
-            var lake = prompt("You enter on the swamp path and head north in the distance you see a swamp hut. As you approach you see a light burning inside. \n- enter hut \n- burn down hut");
-            if(lake == "enter hut" || lake == "enter"){
-                alert("You entered the hut. there is an old bag bend over a black cauldron on the fire in hte hearth." );
-            }
-            else if( lake = "burn down hut" || lake == "burn"){
-                alert("you burn down the hut... hope you feel good about yourself.. Pyro!");
-            }
-            
-            else{
-                alert("don't throw rockes at hut ... please!");
-            }
-        }
-    
-       
-       else if(lakeEnv == "Swim"){
-            
-        }
-        else{
-            alert("I don't understand "+lakeEnv);
-            Lake();
-        }
- }
+  
   Castle();
   function Castle(){
       var insideCastle = prompt(" - upstairs -downstairs -courtyard -balcony -look").toLowerCase();
