@@ -14,7 +14,7 @@ Multiline comment
 //javascript invintory object for an invintory
 var inventory = {
     coins:1000,
-    strawberries:0,
+    chips:0,
     sword:0,
     map:0
 }
@@ -81,17 +81,17 @@ function Prison(){
         
         
         if(lakeEnv == "go swiming" || lakeEnv == "swim"){
-            var lake = prompt("You enter on the swamp path and head north in the distance you see a swamp hut. As you approach you see a light burning inside. \n- enter hut \n- burn down hut");
-            if(lake == "enter hut" || lake == "enter"){
-                alert("You entered the hut. there is an old bag bend over a black cauldron on the fire in hte hearth." );
+            var lake = prompt("You have swam across the lake. In the distance you see a forsest that is close enough to walk to /n- forest");
+            if(lake == "go to the forest" || lake == "forest"){
+                var forest = prompt("You entered the forest. The  trees are giant. You traveled all day around trees you are getting cold and you need get some rest /n- cut down trees" );
             }
-            else if( lake = "burn down hut" || lake == "burn"){
-                alert("you burn down the hut... hope you feel good about yourself.. Pyro!");
+            else if( lake == "cut down trees" || lake == "cut"){
+                alert("You have cut down trees with a ace that you had. you found strong ropes on the gorund. You made a good shelter and safe for the night In the morning you walked futher and found a abanded town with food from a vending machine and you are hungry so you get something.!");
             }
             
-            else{
-                alert("don't throw rockes at hut ... please!");
-            }
+            //else{
+                //alert("You spent the night in the trees!");
+            //}
         }
         else if(lakeEnv == "Swim"){
             
@@ -103,45 +103,45 @@ function Prison(){
       
         }
  }
-store()
-function store(){
-            alert("There is a vending machine is half way full");
+Store()
+function Store(){
+            alert("The vending machine is half way full");
             
-                var store = prompt("What would youlike to buy? \n-carrots \n-peas \n-strawberries \n-leave store");
-                    if(store == "strawberries" || store == "berries" && inventory.coins >= 100){
-                        var strawberriesBuy = confirm("Are you sure you want to buy stawberries");
-                            if(strawberriesBuy){
+                var store = prompt("What would youlike to buy? \n-chips \n-peanuts \n-granola bar \n-leave vending machine");
+                    if(store == "chips" || store == "chips" && inventory.coins >= 100){
+                        var chipsBuy = confirm("Are you sure you want to buy chips");
+                            if(chipsBuy){
                                 //Adds sword plus one
-                                inventory.strawberries ++;
+                                inventory.chips ++;
                                 // displays strawberries owned
-                                alert("You own "+inventory.strawberries+" strawberry")
+                                alert("You own "+inventory.chips+" bag of chips.")
                                 //takes money out of account for strawberries
                                 inventory.coins = inventory.coins -5;
                                 //displays coins left in account
                                 alert("You have "+inventory.coins+" coins remaining");
+                          
+                      }
                                 
                             }
                         else{
                             alert("have a good day, come back again!");
-                            Village();
+                            Castle();
                         }
                     }
         
 			var resume = confirm("Do you wish to continue");
 			
 			if(resume){
-				Prison();
+				Store();
 			}
-			else if(resume == false){
+			else{
 				alert("Game Over!");
 			}
 		
-            else{ 
-                alert("I don't know what "+ prison+" is!");
-                Prison();
-            }
+            
+            
 	
-}
+
   
   Castle();
   function Castle(){
