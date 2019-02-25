@@ -15,7 +15,7 @@ Multiline comment
 var inventory = {
     coins:1000,
     chips:0,
-    sword:0,
+    crackers:0,
     map:0
 }
 var enemy ={
@@ -31,25 +31,33 @@ Game();
 function Game(){
 	
 	document.write("Pandemic Survival!");
-	var playerName = prompt("What is your name?");
-	alert("Welcome to Pandemic survival " + playerName);
+	
+    var playerName = prompt("What is your name?");
+    while(!confirm("Are you sure you want "+playerName+" as a name")){
+        playerName = prompt("What name do you want?");
+    }
+	alert("Welcome to Pandemic Survival " + playerName);
+    
+    
+    
+  
 	
 	Prison();
 
 	
 function Prison(){
-		var prison = prompt("There has been a pandemic, they had kept the disease in a town that was fenced. You were a guard of the diseased. You didn't know that they had plotted a plan to escape. One day when you were giving the sick food, they grabbed you and drug you somewhere. You just barley woke up. You have no clue where everyone is. You no longer have your safteysuit from the disease on. You look around adn see a purple,green,balck,mark on your arm, it is the rash of the disease. \n-look around \n-go to the grass").toLowerCase();
+		var prison = prompt("There has been a pandemic. The infected people were kept in a town that was fenced. You were a guard of the diseased. You didn't know that they had planned to escape. One day when you were giving the sick food, they grabbed you and dragged you somewhere. You just barely woke up. You have no clue where everyone is. You no longer have your saftey suit on that protected you from the disease. You look around and see a purple, green and black mark on your arm. It is the rash of the disease. \n-look around \n-go to the grass").toLowerCase();
     
     
 		
 		if(prison == "look around" || prison == "look"){
-			 alert(" You sit up from you cot. The door to the room is open. You see vibrant green grass with a lake in the distance."); 
+			 alert(" You sit up from your cot. The door to the room is open. You see vibrant green grass with a lake in the distance."); 
                   
         }
 		
 			
 		else if(prison == "go to the grass" || prison == "grass"){
-			alert("You are now outside. You see flowers decerating the edge of the house. To your left you see a giant garden");
+			alert("You are now outside. You see flowers decorating the edge of the house. To your left you see a giant garden");
             
             var resume = confirm("do you wish to continue");
             if(resume){
@@ -74,16 +82,16 @@ function Prison(){
 
  Lake()
  function Lake(){
-        var lakeEnv = prompt("This is a huge lake.  \n- go swiming");
+        var lakeEnv = prompt("This is a huge lake.  \n- go swimming");
         
         
-        if(lakeEnv == "go swiming" || lakeEnv == "swim"){
-            var lake = prompt("You have swam across the lake. In the distance you see a forsest that is close enough to walk to \n- forest \n -cut down trees");
+        if(lakeEnv == "go swimming" || lakeEnv == "swim"){
+            var lake = prompt("You swam across the lake. In the distance you see a forest that is close enough to walk to \n- forest \n -cut down trees");
             if(lake == "go to the forest" || lake == "forest"){
-                alert("You entered the forest. The  trees are giant. You traveled all day around trees you are getting cold and you need get some rest. As  you wake up you feel hungry and see a vending machine." );
+                alert("You entered the forest. The  trees are giant. You traveled all day around trees.  You are getting cold and you need to get some rest. As you wake up you feel hungry and see a vending machine." );
             }
             else if( lake == "cut down trees" || lake == "cut"){
-                alert("You have cut down trees with a axe that you had. you found strong ropes on the gorund. You made a good shelter and you are safe for the night. In the morning you walked further and found an abanded town with food from a vending machine and you are hungry so you get something.!");
+                alert("You have cut down trees with an axe that you had. You found strong ropes on the gorund. You made a good shelter and you are safe for the night. In the morning you walked further and found an abanded town with food from a vending machine and you are hungry so you get something.!");
             }
             
             //else{
@@ -102,9 +110,12 @@ function Prison(){
  }
 Store()
 function Store(){
+            var crackers = 3;
+            var chips = 2;
             alert("The vending machine is half way full");
             
                  let store = prompt("What would you like? \n-chips  \n-leave vending machine");
+                
                     if(store == "chips" || store == "chips" && inventory.coins >= 100){
                         var chipsBuy = confirm("Are you sure you want to buy chips");
                             if(chipsBuy){
@@ -116,6 +127,20 @@ function Store(){
                                 inventory.coins = inventory.coins -5;
                                 //displays coins left in account
                                 alert("You have "+inventory.coins+" coins remaining");
+                                
+                    else if(store == "crackers" || store == cracker){
+                        var crackersBuy = prompt("How many crackers would you like to buy?");
+                        
+                        while(!confirm("Do you really want to buy"+crackersBuy+"crackers for"+crackers+"for each bag?")){
+                            crackersBuy = prompt("how many crackers do you want to buy");
+                        }
+                        for(i = 1; i <= crackersBuy; i++){
+                            inventory.crackers ++;
+                            console.log("You have"+inventroy.crackers+"crackers");
+                        }
+                        alert("You have purchased"+crackersBuy+"crackers.");
+                        Store();
+                    }
                                 
                           
                       }
@@ -153,7 +178,7 @@ function Store(){
              Castle();
         break;
         case "south":
-            alert("You travel south and run into a moose. then see a building and learn that the doctor is there.");
+            alert("You travel south and run into a moose. Then see a building and learn that the doctor is there.");
              
         break;
         case "east":
@@ -161,7 +186,7 @@ function Store(){
             Castle();
         break;
         case "west":
-            alert("you go west and come across two run away infected.");
+            alert("you go west and come across two run away infected people.");
             Castle();
         break;
         default:
@@ -172,7 +197,7 @@ function Store(){
              
  Doctor();
  function Doctor(){
-     alert("You have traveled a long distance and you have now met the doctor but because of his captor he may not give you the cure it all depends on his mood.")
+     alert("You have traveled a long distance. You are now going to meet the doctor, but because of his captor, he may not give you the cure. It all depends on his mood.")
      
      var mood = [" a good mood you get the cure"," a bad mood he got hurt recently and decides to not give the cure"];
      alert("he is in"+mood[Math.floor(Math.random()*2)]);
