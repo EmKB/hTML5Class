@@ -188,7 +188,7 @@ function Store(){
  function Doctor(){
      alert("You have traveled a long distance. You are now going to meet the doctor, but because of his captor, he may not give you the cure. It all depends on his mood.")
      
-     var mood = [" a good mood you get the cure"," a bad mood he got hurt recently and decides to not give the cure"];
+     var mood = [" a good mood you get the cure"," a bad mood he got hurt recently and decides to not give the cure sorry you didn't survive."];
      alert("he is in"+mood[Math.floor(Math.random()*2)]);
      
      alert("congrats you finished the game!");
