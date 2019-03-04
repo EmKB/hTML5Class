@@ -43,7 +43,7 @@ function Game(){
   
 	
 	Prison();
-
+}
 	
 function Prison(){
 		var prison = prompt("There has been a pandemic. The infected people were kept in a town that was fenced. You were a guard of the diseased. You didn't know that they had planned to escape. One day when you were giving the sick food, they grabbed you and dragged you somewhere. You just barely woke up. You have no clue where everyone is. You no longer have your saftey suit on that protected you from the disease. You look around and see a purple, green and black mark on your arm. It is the rash of the disease. \n-look around \n-go to the grass").toLowerCase();
@@ -66,12 +66,13 @@ function Prison(){
             }
             else{
                 alert("Game Over");
+                QUIT
             }
             
         }
         
         else if(prison == "castle"){
-            Castle();
+            Lake();
         }
         else{
             alert("I don't konw what "+prison+" is");
@@ -106,64 +107,48 @@ function Prison(){
             Lake();
         }
       
-        }
  }
+ 
 Store()
 function Store(){
             var crackers = 3;
             var chips = 2;
             alert("The vending machine is half way full");
             
-                 let store = prompt("What would you like? \n-chips  \n-leave vending machine");
+                 let store = prompt("What would you like?  \n-crackers \n-leave vending machine");
                 
-                    if(store == "chips" || store == "chips" && inventory.coins >= 100){
-                        var chipsBuy = confirm("Are you sure you want to buy chips");
-                            if(chipsBuy){
+                    //if(store == "chips" || store == "chips" && inventory.coins >= 100){
+                        //var chipsBuy = confirm("Are you sure you want to buy chips");
+                            //if(chipsBuy){
                                 //Adds sword plus one
-                                inventory.chips ++;
+                                //inventory.chips ++;
                                 // displays strawberries owned
-                                alert("You own "+inventory.chips+" bag of chips.")
+                                //alert("You own "+inventory.chips+" bag of chips.")
                                 //takes money out of account for strawberries
-                                inventory.coins = inventory.coins -5;
+                                //inventory.coins = inventory.coins -5;
                                 //displays coins left in account
-                                alert("You have "+inventory.coins+" coins remaining");
+                                //alert("You have "+inventory.coins+" coins remaining");
+                            
                                 
-                    else if(store == "crackers" || store == cracker){
+                    if(store == "crackers" || store == "cracker"){
                         var crackersBuy = prompt("How many crackers would you like to buy?");
                         
-                        while(!confirm("Do you really want to buy"+crackersBuy+"crackers for"+crackers+"for each bag?")){
-                            crackersBuy = prompt("how many crackers do you want to buy");
+                        while(!confirm("Do you really want to buy "+crackersBuy+" crackers for "+crackers+" for each bag?")){
+                            crackers = prompt("how many crackers do you want to buy");
                         }
                         for(i = 1; i <= crackersBuy; i++){
                             inventory.crackers ++;
-                            console.log("You have"+inventroy.crackers+"crackers");
+                            console.log("You have"+inventory.crackers+"crackers");
                         }
-                        alert("You have purchased"+crackersBuy+"crackers.");
+                        alert("You have purchased "+crackersBuy+" crackers.");
+                        
                         Store();
                     }
                                 
-                          
-                      }
-                                
-                            }
-                        else{
-                            alert("have a good day, come back again!");
-                            Castle();
-                        }
-                    }
-        
-			var resume = confirm("Do you wish to continue");
-			
-			if(resume){
-				Store();
-			}
-			else{
-				alert("Game Over!");
-			}
-		
-            
-            
-	
+                    else if(store == "leave vending machine" || store == "leave"){
+                        Castle();
+                    }      
+    }
 
   
   Castle();
@@ -174,8 +159,7 @@ function Store(){
      switch(insideCastle){
          case "north" || "go north":
              alert("You continue North and run into a brown bear.");
-             
-             Castle();
+             Lose();
         break;
         case "south":
             alert("You travel south and run into a moose. Then see a building and learn that the doctor is there.");
@@ -194,8 +178,13 @@ function Store(){
             Castle();
         break;
      }
+    Doctor();
+  }
              
- Doctor();
+ function Lose(){
+     alert("You freak out and get attacked sorry you didn't survive.")
+     QUIT
+ }
  function Doctor(){
      alert("You have traveled a long distance. You are now going to meet the doctor, but because of his captor, he may not give you the cure. It all depends on his mood.")
      
@@ -208,7 +197,7 @@ function Store(){
  }
      
   
-}
+
 
 
 
