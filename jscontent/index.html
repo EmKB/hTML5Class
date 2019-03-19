@@ -102,15 +102,18 @@
          <li class="coleciton-item">
             <a href="#">Fatima</a>
          </li>
-         <script>
-            //get inout element
-            let filterInput = document.getElementById('filterInput');
-            //add event
-            filterInput.addEventListener('keyup', filterNames);
+       </ul>
+     </div>
+          
+    <script>
+        //get inout element
+        let filterInput = document.getElementById('filterInput');
+        //add event
+        filterInput.addEventListener('keyup', filterNames);
              
-            function filterNames(){
-            // get value
-                let filtervalue = document.getElementById('filterInput').value.toUpperCase
+        function filterNames(){
+        // get value
+        let filterValue = document.getElementById('filterInput').value.toUpperCase
             //names
             let ul = document.getElementById('names');
             //get lis
@@ -127,9 +130,7 @@
           }
         }
         </script>
-        </ul>
-      </div>
-
+       
      
     </body>
 </html>
