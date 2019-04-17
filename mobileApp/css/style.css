@@ -1,1 +1,47 @@
 /* Stylesheet for Mobile App */
+/* Reser */
+html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6 
+{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: antiquewhite;
+}
+
+
+div#container
+{
+    width:600px;
+    height:500px;
+    border:3px solid White;
+    background-color:aqua;
+}
+
+header{
+    width:83.4%;
+    padding:50px;
+    background-color:darkgoldenrod;
+}
+
+header h1{
+    color:black;
+    font-family: "Tahoma", monospace;
+    font-size: 2.5em;
+}
+
+div#content{
+    width:100%;
+    background-color: antiquewhite;
+}
+
+nav{
+    background-color: azure;
+    color:burlywood;
+    font-size: 1.5em;
+}
+footer{
+    width:100%;
+    height:50px;
+    background-color: darksalmon;
+}
