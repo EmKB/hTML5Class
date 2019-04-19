@@ -1,4 +1,12 @@
+/*Gooogle fonts
+
+font-family: 'Italianno', cursive;
+font-family: 'Abhaya Libre', serif;
+*/
+
+
 /* Stylesheet for Mobile App */
+
 /* Reser */
 html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6 
 {
@@ -26,7 +34,7 @@ header{
 
 header h1{
     color:black;
-    font-family: "Tahoma", monospace;
+    font-family: "Special Elite", cursive;
     font-size: 2.5em;
 }
 
@@ -35,13 +43,33 @@ div#content{
     background-color: antiquewhite;
 }
 
+
 nav{
     background-color: azure;
     color:burlywood;
     font-size: 1.5em;
 }
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    float:left;
+    padding: 5px 15px;
+    border-right: 2px solid BLACK;
+}
+nav ul li a{
+    color:burlywood;
+    text-decoration: none;
+    
+}
+nav ul li a:hover{
+    background-color:antiquewhite;
+}
 footer{
     width:100%;
     height:50px;
     background-color: darksalmon;
+}
+div.keepOpen{
+    clear:both;
 }
