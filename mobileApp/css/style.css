@@ -14,20 +14,19 @@ html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6
     padding:0;
 }
 body{
-    background-color: antiquewhite;
+    background-color:dimgray;
 }
 
 
 div#container
 {
-    width:600px;
-    height:500px;
+    width:100%;
     border:3px solid White;
-    background-color:aqua;
+    background-color:azure;
 }
 
 header{
-    width:83.4%;
+    width:95%;
     padding:50px;
     background-color:darkgoldenrod;
 }
@@ -40,36 +39,49 @@ header h1{
 
 div#content{
     width:100%;
-    background-color: antiquewhite;
+    background-color:dimgray;
 }
 
 
 nav{
-    background-color: azure;
+    background-color:cyan;
     color:burlywood;
     font-size: 1.5em;
 }
 nav ul{
     list-style: none;
 }
-nav ul li{
+
+nav ul li a{
     float:left;
+    display:block;
     padding: 5px 15px;
     border-right: 2px solid BLACK;
-}
-nav ul li a{
-    color:burlywood;
+    color:darkgoldenrod;
     text-decoration: none;
     
 }
 nav ul li a:hover{
-    background-color:antiquewhite;
+    background-color:azure;
+    color:darkred;
 }
 footer{
+    position:absolute;
+    bottom:0;
+    left:0;
     width:100%;
     height:50px;
     background-color: darksalmon;
 }
 div.keepOpen{
     clear:both;
+}
+@media screen and (max-width:600px){
+    div#container{
+        width:100%
+    }
+    nav ul li a{
+        float:none;
+        text-align: center;
+    }
 }
