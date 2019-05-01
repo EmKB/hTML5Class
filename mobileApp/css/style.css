@@ -28,6 +28,11 @@ header{
     padding:50px;
     background-color:darkgoldenrod;
 }
+header img#applogo{
+    display:block;
+    margin:auto;
+    width:100px;
+}
 
 header h1{
     color:black;
