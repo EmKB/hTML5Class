@@ -5,7 +5,7 @@ font-family: 'Abhaya Libre', serif;
 
 /* Stylesheet for Mobile App */
 
-/* Reser */
+/* Reset */
 html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6 
 {
     margin:0;
@@ -36,6 +36,7 @@ header img#applogo{
 
 header h1{
     color:black;
+    text-align: center;
     font-family: "Special Elite", cursive;
     font-size: 2.5em;
 }
