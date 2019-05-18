@@ -9,7 +9,7 @@ font-family: 'Abhaya Libre', serif;
 html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6 
 {
     margin:0;
-    padding:0;
+    /*padding:0;*/
 }
 body{
     background-color:dimgray;
@@ -21,17 +21,22 @@ div#container
     width:100%;
     border:3px solid White;
     background-color:azure;
+    text-align: center;
+    
 }
 
 header{
-    width:95%;
-    padding:50px;
+    width:100%;
+    height: auto;
+    /*padding:50px;*/
     background-color:darkgoldenrod;
+   
 }
 header img#applogo{
     display:block;
     margin:auto;
-    width:100px;
+    width:50px;
+    padding-top: 10px;
 }
 
 header h1{
@@ -43,9 +48,22 @@ header h1{
 
 div#content{
     width:100%;
-    background-color:aliceblue;
+    background-color:bisque;
+    
 }
-
+div#content img{
+    display:block;
+    margin:auto;
+    width: 400px;
+    height: 400px;
+    margin-bottom:auto;
+}
+div#content p{
+    height:400px;
+    width:400px;
+    margin:5px auto;
+    text-align: center;
+}
 /*
 nav{
     background-color:cyan;
@@ -73,7 +91,7 @@ nav ul li a:hover{
 */
 
 .icon-bar{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -107,16 +125,62 @@ footer{
     height:50px;
     background-color: darksalmon;
 }
+*/
+
+div#product_grp{
+    width: auto;
+    margin: auto;
+    
+}
+figure.product{
+    display:block;
+	float:left;
+	margin:10px 15px;
+	min-width:30%;
+	max-width:45%;
+	background-color:aliceblue;
+	border-radius:5%
+    
+}
+
+figure.product img{
+    display: block;
+    padding: 10px 0;
+    width: auto;
+    margin: auto;
+    border: solid;
+}
+figure.product figcaption{
+    text-align: center;
+    color:black;
+    font-family: fantasy;
+    font-size: 24px;
+}
 div.keepOpen{
     clear:both;
 }
-@media screen and (max-width:600px){
-    div#container{
-        width:100%
-    }
-    nav ul li a{
-        float:none;
-        text-align: center;
-    }
+@media screen and (max-width: 600px) {
+	figure.product{
+		float:none;
+		margin:10px auto;
+		min-width:50%;
+		max-width:100%;
+		background-color: cadetblue;
+		border-radius:5%;
+	}
+	figure.product figcaption{
+	text-align: center;
+	color:white;
+	font-family: fantasy;
+	font-size:12px;
 }
-*/
+    
+legend, span, input, textarea {
+		display:block;
+		margin:auto;
+		text-align:center;
+		font-family:sans-serif;
+		color:black;
+	}
+
+}

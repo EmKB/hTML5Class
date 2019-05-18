@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
     <meta char="UTF-8">
     <meta name="viewport" content="width=device, initial-scale=1.0">
     <title>Mobile App</title>
@@ -11,17 +12,15 @@
     </head>
     <body>
         <div id="container">
-            <header id="head">
+              <header id="head">
                 <img src="img/applogo.png" id="applogo"
                      alt="App Logo">
                 <h1>Room Remodel</h1>
             </header>
             <div id="content">
-                <h3>New Products</h3>
-                <img src="" alt="Product#1" id="product">
-            </div>
-            
-            <div class="icon-bar">
+                <h3>Room planner</h3>
+                
+           <div class="icon-bar">
                 <a href="index.html"><i class="fa fa-home"></i></a>
             <a href="products.html"><i class="fa fa-search"></i></a>
             <a href="contact.html"><i class="fab fa-instagram"></i></a>
@@ -29,7 +28,52 @@
             href="services.html"><i class="fas fa-file-image"></i></a>
             <a href="suggestions.html"><i class="fab fa-dropbox"></i></a>
             </div>
-                 
+
+            <style>
+            #div1 ,#div2 {
+            float:left;
+            width: 450px;
+            height: 450px;
+            margin:10px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+                }
+            </style>
+            
+            <script>
+            function allowDrop(ev){
+            ev.preventDefault();
+            }
+            
+            function drag(ev) {
+            ev.dataTransfer.setData("text",ev.target.id);
+            }
+            
+            function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            }
+            </script>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="img/bed.jpg"  draggable="true" ondragstart="drag(event)" id="drag1" width="100" height="60">
+           
+           
+            
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+<br></div>
+<br>
+
+<br>
+
+
+<img id="drag3" src="img/dresser.jpg" draggable="true"
+     ondragstart="drag(event)" width="200" height="100" position="relaltive(48,30,20)">
+        </div>
+            
+            
+            
 <!--            
             <nav id="nav">
                 <ul>
